@@ -1,0 +1,11 @@
+{
+  "name": "tip-calc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hugohp19/tip-calc.git",
+  "author": "hugohp19 <hp19@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
