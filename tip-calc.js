@@ -14,25 +14,20 @@ const tipPercentage = readlineSync.questionFloat('What % would you like to tip? 
 console.log(`Name of the Order: ${userName}`);
 console.log(`Sub-Total: $${totalFloat.toFixed(2)}`);
 console.log(`Party Size: ${partySize}`);
-
+let porcentange;
 // calculate how much everyone is paying - divide the total amount of the bill pluss tip by the party size
 if(partySize < 6){
     console.log(`Tip amount: ${tipPercentage}%`);
-    let porcentange = (totalFloat * (tipPercentage / 100));
-    let totalAmountWithTip = (totalFloat + porcentange);
-    console.log(`The tip is: $${porcentange.toFixed(2)}`);
-    console.log(`Total: $${totalAmountWithTip.toFixed(2)}`);
-    let amountPerPerson = (totalAmountWithTip / partySize).toFixed(2);
-    console.log(`Total amount per person: $${amountPerPerson}`);
+    porcentange = (totalFloat * (tipPercentage / 100));
 } else {
     console.log(`There is a mandatory 18% tip with parties larger than 5.`);
-    let porcentange = (totalFloat * 0.18);
-    let totalAmountWithTip = (totalFloat + porcentange);
-    console.log(` The tip is: $${porcentange.toFixed(2)}`);
-    console.log(`Total: $${totalAmountWithTip.toFixed(2)}`);
-    let amountPerPerson = (totalAmountWithTip / partySize).toFixed(2);
-    console.log(`Total amount per person: $${amountPerPerson}`);
+    porcentange = (totalFloat * 0.18);
 }
+let totalAmountWithTip = (totalFloat + porcentange);
+console.log(`The tip is: $${porcentange.toFixed(2)}`);
+console.log(`Total: $${totalAmountWithTip.toFixed(2)}`);
+let amountPerPerson = (totalAmountWithTip / partySize).toFixed(2);
+console.log(`Total amount per person: $${amountPerPerson}`);
 
 //console.log(userName, totalFloat, partySize, tipPercentage);
 //console.log(typeof userName, typeof totalFloat, typeof partySize, typeof tipPercentage, typeof porcentange, typeof totalAmountWithTip);
